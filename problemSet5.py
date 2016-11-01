@@ -11,7 +11,7 @@ class Message(object):
     
     def __init__(self, text = None):
         self.message = text
-        self.cipherText = None
+        self.cipherText = ''
         
     def __str__(self):
         return self.message
@@ -42,4 +42,9 @@ class CiphertextMessage(Message):
     
     def decrypt(self, decryptNum):
         self.cipher(decryptNum)
+        
+msn = Message('abc')
+msn.cipher(900)
+print(msn)
+print(msn.getCipherText())
  
