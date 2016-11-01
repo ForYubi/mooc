@@ -20,6 +20,7 @@ class Message(object):
         return char in string.ascii_letters
         
     def cipher(self, cipherNum):
+        cipherNum = cipherNum % 26
         alphabet = string.ascii_lowercase * 2 + string.ascii_uppercase * 2
         for letter in self.message:
             if self.isWord(letter):
