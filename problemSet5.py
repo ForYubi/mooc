@@ -44,7 +44,7 @@ class CiphertextMessage(Message):
     def decrypt(self, decryptNum):
         self.cipher(decryptNum)
         
-msn = Message('abc')
+msn = Message('ab c')
 msn.cipher(900)
 print(msn)
 print(msn.getCipherText())
