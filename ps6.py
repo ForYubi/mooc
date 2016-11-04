@@ -149,6 +149,9 @@ class PlaintextMessage(Message):
         '''
         #pass #delete this line and replace with your code here
         Message.__init__(self, text)
+        #self.message_text = text
+        #self.valid_words = load_words(WORDLIST_FILENAME)
+        
         self.shift = shift
         self.encrypting_dict = Message.build_shift_dict(self, shift)
         self.message_text_encrypted = Message.apply_shift(self, shift)
@@ -188,7 +191,11 @@ class PlaintextMessage(Message):
 
         Returns: nothing
         '''
-        self.__init__(self.message_text, shift)
+        #no good enough, every time need to loads words list
+        #self.__init__(self.message_text, shift)
+        self.shift = shift
+        self.encrypting_dict = Message.build_shift_dict(self, shift)
+        self.message_text_encrypted = Message.apply_shift(self, shift)
 
         
 class CiphertextMessage(Message):
