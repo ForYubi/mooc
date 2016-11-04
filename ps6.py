@@ -203,6 +203,7 @@ class CiphertextMessage(Message):
             self.valid_words (list, determined using helper function load_words)
         '''
         #pass #delete this line and replace with your code here
+        Message.__init__(self, text)
 
     def decrypt_message(self):
         '''
@@ -238,9 +239,10 @@ class CiphertextMessage(Message):
                     count += 1
             if count > tag:
                 tag = count
-                shiftNum = 26 - shift
+                shiftNum = shift
                 bestText = testText
         return (shiftNum, bestText)
+
 
 #Example test case (PlaintextMessage)
 plaintext = PlaintextMessage('hello', 2)
