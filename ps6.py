@@ -260,3 +260,9 @@ print('Actual Output:', plaintext.get_message_text_encrypted())
 ciphertext = CiphertextMessage('jgnnq')
 print('Expected Output:', (24, 'hello'))
 print('Actual Output:', ciphertext.decrypt_message())
+
+
+def decrypt_story():
+    cipherText = get_story_string()
+    myMessage = CiphertextMessage(cipherText)
+    return myMessage.decrypt_message()
