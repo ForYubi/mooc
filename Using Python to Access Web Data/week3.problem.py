@@ -22,7 +22,8 @@ except urllib.request.HTTPError as error:
 domain = 'data.pr4e.org'
 mysock = socket.socket()
 mysock.connect((domain, 80))
-mysock.send(b'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\n\n')
+mysock.send(('GET ' + url + ' HTTP/1.0\n\n').encode('utf-8'))
+#mysock.send(b'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\n\n')
 
 while True:
     data = mysock.recv(512).decode('utf-8')
