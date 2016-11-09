@@ -19,7 +19,7 @@ text = response.read().decode('utf-8')
 numList = re.findall('[0-9]+', text)
 
 print(numSum = sum(map(int, numList)))
-
+#554392
 '''
 #from urllib.request import urlretrieve
 
