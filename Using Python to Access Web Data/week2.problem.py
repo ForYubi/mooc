@@ -13,9 +13,6 @@ import urllib.request
 sampleData = 'http://python-data.dr-chuck.net/regex_sum_42.txt'
 actualData = 'http://python-data.dr-chuck.net/regex_sum_303857.txt'
 
-sampleData = 'http://python-data.dr-chuck.net/regex_sum_42.txt'
-actualData = 'http://python-data.dr-chuck.net/regex_sum_303857.txt'
-
 urllib.request.urlretrieve(sampleData, 'test1.txt')
 with open('test1.txt', 'r') as newFile:
     print(newFile.read())
