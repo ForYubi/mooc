@@ -12,7 +12,7 @@ sampleData = 'http://python-data.dr-chuck.net/comments_42.xml'
 actualData = 'http://python-data.dr-chuck.net/comments_303859.xml'
 
 try:
-    url = urllib.request.urlopen(sampleData)
+    url = urllib.request.urlopen(actualData)
     #soup = BeautifulSoup(url.read().decode('utf-8'), 'html.parser')
     #tags = soup.find_all('count')
     #print(tags)
@@ -24,8 +24,7 @@ try:
         print(type(item.text))
     '''
     results = tree.findall('.//count')
-    for items in results:
-        print(int(items.text))
+    print(sum(int(item.text) for item in results))
 
 except urllib.request.HTTPError as error:
     print(error)
