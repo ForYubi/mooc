@@ -21,6 +21,6 @@ try:
     soup = BeautifulSoup(data, 'html.parser')
     tags = soup.find_all('span')
     print('Count', len(tags))
-    print('Sum', sum(int(tag.contents[0]) for tag in tags))
+    print('Sum', sum(int(tag.string) for tag in tags))
 except urllib.request.HTTPError as error:
     print(error)
